@@ -32,6 +32,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-material-design'
 gem "paperclip", "~> 5.0.0"
 gem 'paypal-sdk-rest'
+gem 'aasm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'rspec-rails',"~>  3.5.0.beta1" # Framework pruebas
   gem "factory_girl_rails", "~> 4.0" # Nos permite crear objetos de la BD para pruebas
   gem 'annotate'
+  gem 'letter_opener'
 end
 
 group :development do

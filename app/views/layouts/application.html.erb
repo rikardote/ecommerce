@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Ecommerce</title>
-		<%= csrf_meta_tags %>
-
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-	</head>
-
-	<div style="<%= "display:none;" if alert.nil? && notice.nil? %>">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
+<head>
+  <title>Ecommerce</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="blue white-text large-padding bold text-center" style="<%= "display:none;" if alert.nil? && notice.nil? %>">
+		<p class="no-padding no-margin inline-block"><%= notice %><%= alert %></p>
+		<span class="pull-right close-parent">X</span>
 	</div>
-	
-	<body>
-		<%= render "partials/nav" %>
-		<div class="col-md-11 no-float center-block">
-			<%= yield %>
-		</div>
-	</body>
+
+
+	<%= render "partials/nav" %>
+
+	<div class="col-md-11 no-float center-block">
+		
+		<%= yield %>
+	</div>
+</body>
 </html>

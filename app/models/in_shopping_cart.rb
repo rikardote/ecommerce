@@ -9,9 +9,8 @@
 #  updated_at       :datetime         not null
 #
 
-class InShoppingCart < ApplicationRecord
+class InShoppingCart < ActiveRecord::Base
   belongs_to :product
   belongs_to :shopping_cart
   has_one :user, through: :product
-
 end

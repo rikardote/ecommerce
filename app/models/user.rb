@@ -17,10 +17,18 @@
 #  updated_at             :datetime         not null
 #
 
-class User < ApplicationRecord
+class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :products
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :products
+
+  def orders
+  	MyPayment.joins(:products)
+  		.joins("LEFT JOIN users ON products.user_id = users.id")
+  		.where(users:{id:self.id})
+  end
+
+
 end

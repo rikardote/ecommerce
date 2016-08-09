@@ -3,7 +3,7 @@
 # Table name: shopping_carts
 #
 #  id         :integer          not null, primary key
-#  status     :integer          default(0)
+#  status     :string
 #  ip         :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :shopping_cart do
-    status 1
-    ip "MyString"
+		ip "127.0.0.1"
   end
+
 end
