@@ -46,7 +46,7 @@ group :development, :test do
   gem 'letter_opener'
 end
 group :production do
-  gem 'mysql2','~>0.3.9'
+  gem 'mysql2', '~> 0.4.2'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
